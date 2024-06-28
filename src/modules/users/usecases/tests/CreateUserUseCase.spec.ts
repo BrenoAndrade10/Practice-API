@@ -19,5 +19,11 @@
 //     await usecase.execute(userInsertMock)
 
 //     expect(usersRepo.insert).toHaveBeenCalledTimes(1);
-//     expect(usersRepo.insert).toHaveBeenCalledWith(userInsertMock);
+//     expect(usersRepo.insert).toHaveBeenCalledWith({
+//         document: '20237207702',
+//         email: 'augustobreno2207@gmail.com',
+//         name: 'Breno',
+//         password: expect.any(String),
+//         phone: '24999853372'
+//     });
 // }); 
