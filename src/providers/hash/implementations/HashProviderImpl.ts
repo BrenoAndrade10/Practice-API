@@ -1,7 +1,7 @@
 import * as bcrypt from 'bcrypt';
 import { HashProvider } from "../HashProvider";
 
-export class HashProviderimpl implements HashProvider {
+export class HashProviderImpl implements HashProvider {
     hash(text: string): Promise<string> {
         return bcrypt.hash(text, 14);
     }

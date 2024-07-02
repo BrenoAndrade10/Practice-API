@@ -1,7 +1,7 @@
 import { inject, injectable, singleton } from "tsyringe";
 import { UseCase } from "../../../core/UseCase";
 import { UsersRepository, usersRepositoryAlias } from "../respositories/UsersRepository";
-import { HashProvider, HashProviderAlias } from "../../../providers/HashProvider";
+import { HashProvider, HashProviderAlias } from "../../../providers/hash/HashProvider";
 
 export type CreateUserUseCaseInput = {
     name: string;

@@ -7,6 +7,7 @@ const app = express();
 
 DependencyInjection.init();
 app.use(express.json());
-app.use(router)
+app.use(express.urlencoded({ extended: true }));
+app.use(router);
 
 export { app }
