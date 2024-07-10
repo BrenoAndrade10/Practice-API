@@ -17,13 +17,14 @@ export class UpdateUserController {
         phone: yup.string().optional(),
         email: yup.string().optional(),
         document: yup.string().optional(),
-        userId: yup.number().required(),
     })
 
     async handle(req: Request, res: Response): Promise<Response> {
         const body = await this.bodySchema.validate(req.body, { abortEarly: false });
 
-        await this.updateUserUseCase.execute({ ...body });
+        const userId  = req.user!.id;
+        
+        await this.updateUserUseCase.execute({ ...body, userId });
 
         return res.status(200).send();
     }

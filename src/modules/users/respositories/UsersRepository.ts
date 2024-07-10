@@ -1,9 +1,10 @@
 import { User } from "../entites/User"
 
 export type UsersRepository = {
-    insert(data: InsertUserDTO): Promise<void>
-    updateById(userId: number, data: UpdateUserById): Promise<void>
-    findById(userId: number): Promise<User | null>
+    insert(data: InsertUserDTO): Promise<void>;
+    updateById(userId: number, data: UpdateUserById): Promise<void>;
+    findById(userId: number): Promise<User | null>;
+    findByEmail(email: string): Promise<User | null>;
 }
 
 export type UpdateUserById = {

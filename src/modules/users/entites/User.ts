@@ -23,9 +23,9 @@ export class User {
     phone: string;
 
     static generateAuthToken(userId: number): UserAuthData {
-        const jwtProvide = find<JwtProvider>(jwtProviderAlias);
+        const jwtProvider = find<JwtProvider>(jwtProviderAlias);
 
-        return jwtProvide.generate({
+        return jwtProvider.generate({
             subject: userId.toString(),
         });  
     }
