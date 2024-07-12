@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.usersRouter = void 0;
+const express_1 = require("express");
+const DependencyInjection_1 = require("../../core/DependencyInjection");
+const CreateUserController_1 = require("../../modules/users/controllers/CreateUserController");
+const UpdateUserController_1 = require("../../modules/users/controllers/UpdateUserController");
+const ensureAuthenticated_1 = require("../middlewares/ensureAuthenticated");
+const AuthUserController_1 = require("../../modules/users/controllers/AuthUserController");
+exports.usersRouter = (0, express_1.Router)();
+exports.usersRouter.post('/', (req, res) => (0, DependencyInjection_1.find)(CreateUserController_1.CreateUserController).handle(req, res));
+exports.usersRouter.patch('/', ensureAuthenticated_1._ensureAuthenticated, (req, res) => (0, DependencyInjection_1.find)(UpdateUserController_1.UpdateUserController).handle(req, res));
+exports.usersRouter.post('/auth', (req, res) => (0, DependencyInjection_1.find)(AuthUserController_1.AuthUserController).handle(req, res));

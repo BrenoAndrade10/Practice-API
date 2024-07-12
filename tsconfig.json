@@ -9,7 +9,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "typeRoots": [
+        "./src/@types",
+        "./node_modules/@types"
+      ]
   },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
