@@ -1,5 +1,4 @@
 import { DataSource } from "typeorm";
-import { User } from "../modules/users/entites/User";
 
 export const myDataSource = new DataSource({
     type: 'mysql',
