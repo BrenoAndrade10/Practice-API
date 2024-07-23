@@ -5,9 +5,9 @@ import { myDataSource } from './database/Database';
 (async () => {
     await myDataSource.initialize();  
 
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3002;
     app.listen(port, () => {
-        console.log('Server Runnig on port 3000 🚀');
+        console.log('Server Runnig on port 3002 🚀');
     });
 })();
 
